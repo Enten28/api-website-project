@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="index.js" defer></script>
+  <script src="https://kit.fontawesome.com/f9dd058b76.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <section class="landing__page">
+    <nav>
+      <figure>
+        <img id="personal__logo" src="./assets/blinker logo.png" alt="">
+      </figure>
+      <ul class="nav__link--list">
+        <li class="nav__link">
+          <a href="#" class = "
+          nav__link--anchor
+          link__hover-effect
+          link__hover-effect--white">Home</a>
+        </li>
+        <li class="nav__link">
+          <a href="#" class = "
+          nav__link--anchor
+          link__hover-effect
+          link__hover-effect--white">Find a Movie</a>
+        </li>
+        <li class="nav__link">
+          <a href="#" class = "
+          nav__link--anchor
+          link__hover-effect
+          nav__link--anchor-primary">Contact</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="search__section">
+      <h2>Browse our Movies</h2>
+      <form class="search__form" onsubmit="onSearchChange(event)">
+        <input type="text" id="searchInput" class="search__input" placeholder="Search our movies" >
+        <button type="submit" class="search__btn">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </form>
+    </div>    
+  </section>
+  <section class="user__section">
+  <aside class="filters">
+    <div class="filter__group">
+      <h3>Type</h3>
+
+      <label>
+        <input type="checkbox" value="movie" class="type-filter">
+        <span>Movie</span>
+      </label>
+
+      <label>
+        <input type="checkbox" value="series" class="type-filter">
+        <span>Series</span>
+      </label>
+
+      <label>
+        <input type="checkbox" value="episode" class="type-filter">
+        <span>Episode</span>
+      </label>
+    </div>
+
+    <div class="filter__group">
+      <h3>Year Range</h3>
+
+      <div class="range__slider">
+        <input
+          type="range"
+          id="yearMin"
+          class="range__input"
+          min="1900"
+          max="2026"
+          value="1980"
+          aria-label="Minimum year"
+        >
+
+        <input
+          type="range"
+          id="yearMax"
+          class="range__input"
+          min="1900"
+          max="2026"
+          value="2026"
+          aria-label="Maximum year"
+        >
+
+        <div class="range__display">
+          <span id="minDisplay">1980</span>
+          <span id="maxDisplay">2026</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="filter__group">
+      <h3>Sort By</h3>
+
+      <label>
+        <input type="radio" name="sort" value="default" checked>
+        <span>Default</span>
+      </label>
+
+      <label>
+        <input type="radio" name="sort" value="title-asc">
+        <span>Title (A-Z)</span>
+      </label>
+
+      <label>
+        <input type="radio" name="sort" value="title-desc">
+        <span>Title (Z-A)</span>
+      </label>
+
+      <label>
+        <input type="radio" name="sort" value="year-desc">
+        <span>Newest First</span>
+      </label>
+
+      <label>
+        <input type="radio" name="sort" value="year-asc">
+        <span>Oldest First</span>
+      </label>
+    </div>
+  </aside>
+
+  <div class="results__container">
+    <div class="results__header">
+      <h2 id="result__title">Search for Movies</h2>
+      <p id="result__sub-title">
+        To get started, use the search bar.
+      </p>
+    </div>
+    <div class="results__loading" id="resultsLoading" role="status" hidden>
+       <i class="fas fa-spinner fa-spin" aria-hidden="true"></i>
+       <span>Loading...</span>
+    </div>
+    <div id="results__content"></div>
+    <div class="page__number" id="page__number" hidden>
+      <button type="button" id="previousPage">
+        ← Previous
+      </button>
+      <span id="pageInfo" aria-live="polite"></span>
+      <button type="button" id="nextPage">
+        Next →
+      </button>
+    </div>
+  </div>
+</section>
+
+  <footer>
+    <div class="container">
+      <div class="row footer__row">
+        <figure>
+          <img class="footer__logo--img" src="./assets/blinker logo.png" alt="">
+        </figure>
+        <div class="footer__social--list">
+          <a href="https://github.com/your-username" class="footer__social--link link__hover-effect link__hover-effect--white">
+            GitHub
+          </a>
+          <a href="https://linkedin.com/in/your-profile" class="footer__social--link link__hover-effect link__hover-effect--white">
+            LinkedIn
+          </a>
+          <a href="#" onclick="toggleModal()" class="footer__social--link link__hover-effect link__hover-effect--white">
+            Contact
+          </a>
+          <a href="./assets/Resume(update May 2026) (1).pdf" target="_blank" class="footer__social--link link__hover-effect link__hover-effect--white">
+            Resume
+          </a>
+        </div>
+        <div class="footer__copyright">Copyright © 2021 Steven Tran</div>
+      </div>
+    </div>
+  </footer>
+
+  
+</body>
+</html>
